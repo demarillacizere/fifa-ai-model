@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+   <body>
+      <h1>Upload a CSV file to get predictions:</h1>
+      {% if message %}
+         <p>{{ message }}</p>
+      {% endif %}
+      <form action="/predict" method="post" enctype="multipart/form-data">
+         <input type="file" name="file">
+         <input type="submit" value="Predict">
+      </form>
+   </body>
+</html>
