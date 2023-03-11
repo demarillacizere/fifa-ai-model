@@ -59,7 +59,7 @@ def predict():
     df.fillna(df.mean(numeric_only=True).round(1), inplace=True)
 
     y_pred = model.predict(df[columns])
-    y_pred = np.round(y_pred)
+    y_pred = np.round(y_pred).astype(int)
     realvalues = df['overall'].iloc[df.index]
     names = df['short_name'].iloc[df.index]
     return render_template('index.html', predictions=list(y_pred)[:10],realvalues=list(realvalues)[:10],names=list(names)[:10])
