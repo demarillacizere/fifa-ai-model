@@ -34,7 +34,7 @@ def predict():
     y_pred = np.round(y_pred)
     realvalues = data['overall'].iloc[data.index]
 
-    return render_template('index.html', predictions=list(y_pred)[:10],realvalues = list(realvalues)[:10])
+    return render_template('index.html', predictions=list(y_pred)[:10],realvalues=list(realvalues)[:10])
 
 if __name__ == '__main__':
     app.run(debug=True)
